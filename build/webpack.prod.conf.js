@@ -11,7 +11,7 @@ module.exports = {
   output: {
     publicPath: '/dist/',
     filename: "js/[name]-[hash].js",
-    // TODO 为什么页面js都成非入口文件js了？
+    // TODO 貌似是官方bug  正在修...
     chunkFilename: "js/[name]-chunk-[chunkhash].js"
   },
   resolve: {
