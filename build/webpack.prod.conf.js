@@ -53,7 +53,12 @@ module.exports = {
         parallel: true,
         // sourceMap: true // set to true if you want JS source maps
       }),
-      new OptimizeCSSAssetsPlugin({})
+      new OptimizeCSSAssetsPlugin({
+        assetNameRegExp: /(\.optimize)?\.(s)?css$/g,
+        cssProcessor: require('cssnano'),
+        cssProcessorOptions: { safe: true, discardComments: { removeAll: true } },
+        canPrint: true
+      })
     ]
   },
   plugins: [
