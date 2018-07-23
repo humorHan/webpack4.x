@@ -25,6 +25,9 @@ module.exports = {
         loader: MiniCssExtractPlugin.loader,
       }, {
         loader: "css-loader",
+        // options: {  // 压缩改用OptimizeCSSAssetsPlugin
+        //   minimize: true
+        // }
       }, {
         loader: 'postcss-loader'
       }, {
