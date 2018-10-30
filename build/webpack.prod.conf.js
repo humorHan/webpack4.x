@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const utils = require('./lib/utils.js');
 const htmlPlugin = require('./lib/html-plugin.js');
+let AddOriginPlugin = require('./plugin/AddOriginPlugin.js');
 
 module.exports = {
   mode: 'production',
@@ -65,6 +66,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new AddOriginPlugin({
+      dir: './mock-module'
+    }),
     new CleanWebpackPlugin(['dist'], {
       root: utils.cwd
     }),
