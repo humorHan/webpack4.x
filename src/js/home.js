@@ -1,7 +1,8 @@
 require('home.scss');
 let s = 11123;
 console.log(s);
-
-let util = require("util.js");
-
+function A(a=null){
+  console.log(a)
+}
+A(null)
 require("common/jquery.js");

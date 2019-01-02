@@ -24,7 +24,7 @@ module.exports = function (node_env) {
       };
     }
     conf.inject = 'body';
-    conf.chunks = ['manifest', 'vendor', 'commons',`vendors~${htmlName}`, htmlName];
+    conf.chunks = ['manifest', 'vendor', 'commons',`vendors~${htmlName}`, htmlName, 'mock'];
     conf.chunksSortMode = 'manual';
     htmlPlugin.push(new HtmlWebpackPlugin(conf));
   });

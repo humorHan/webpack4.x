@@ -6,6 +6,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const utils = require('./lib/utils.js');
 const htmlPlugin = require('./lib/html-plugin.js');
 let AddOriginPlugin = require('./plugin/AddOriginPlugin.js');
+let TinyPngPlugin = require('./plugin/TinyPngPlugin.js');
 
 module.exports = {
   mode: 'production',
@@ -66,9 +67,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new AddOriginPlugin({
-      dir: './mock-module'
-    }),
+    // new AddOriginPlugin({
+    //   dir: './mock-module'
+    // }),
     new CleanWebpackPlugin(['dist'], {
       root: utils.cwd
     }),
@@ -80,6 +81,9 @@ module.exports = {
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       openAnalyzer: false
-    })
+    }),
+    // new TinyPngPlugin({
+    //   code: '12323123123'
+    // }),
   ]
 };
