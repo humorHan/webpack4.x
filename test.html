@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+      #name {
+        border: 1px solid red;
+        height: 100px;
+        width: 100px;
+      }
+  </style>
+</head>
+<body>
+  <div id="name">
+
+  </div>
+  <script>
+    window.onload = function() {
+      let name = document.getElementById('name');
+      name.addEventListener('click', function() {
+        name.style.marginTop = name.getBoundingClientRect().top + 100 + 'px';
+        setTimeout(() => {
+          let top = name.style.marginTop;
+          setTimeout(() => {
+            name.style.marginTop = name.getBoundingClientRect().top + 100 + 'px';
+          }, 2000);
+        }, 1000);
+      })
+    }
+  </script>
+</body>
+</html>
