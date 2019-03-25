@@ -1,5 +1,6 @@
 const entries = require("./lib/entries");
 const utils = require('./lib/utils.js');
+const tinyPngWebpackPlugin = require('../plugins/tinyPngWebpackPlugin/index.js');
 
 module.exports = {
   entry: entries,
@@ -63,4 +64,10 @@ module.exports = {
       name: 'manifest'
     }
   },
+  plugins: [
+    new tinyPngWebpackPlugin({
+      key: 'xBdcCnv1FsvB8Js22TzLJMYKJlBp9kR1',
+      ext: ['png', 'jpeg', 'jpg']
+    })
+  ]
 };

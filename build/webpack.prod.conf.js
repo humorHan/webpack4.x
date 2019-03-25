@@ -8,6 +8,9 @@ const htmlPlugin = require('./lib/html-plugin.js');
 
 module.exports = {
   mode: 'production',
+  cache: false,
+  watch: false,
+  devtool: 'none',
   output: {
     publicPath: '/dist/',
     filename: "js/[name]-[hash].js",
@@ -42,7 +45,7 @@ module.exports = {
       use: [{
         loader: 'url-loader',
         options: {
-          limit: 4096,
+          limit: 200000,
           name: 'img/[name].[ext]?v=[hash:8]'
         }
       }]
