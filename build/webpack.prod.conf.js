@@ -8,6 +8,9 @@ const htmlPlugin = require('./lib/html-plugin.js');
 
 module.exports = {
   mode: 'production',
+  cache: false,
+  watch: false,
+  devtool: 'none',
   output: {
     publicPath: '/dist/',
     filename: "js/[name]-[hash].js",
