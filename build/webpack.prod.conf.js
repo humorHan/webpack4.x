@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const utils = require('./lib/utils.js');
 const htmlPlugin = require('./lib/html-plugin.js');
+const path = require('path');
 
 module.exports = {
   mode: 'production',
@@ -20,6 +21,12 @@ module.exports = {
   resolve: {
     // 可以根据环境区分引用的库文件是否是开发版本
     alias: {}
+  },
+  resolveLoader: {
+    modules: [
+      path.resolve('loaders'),
+      'node_modules'
+    ]
   },
   module: {
     rules: [{
@@ -47,6 +54,13 @@ module.exports = {
         options: {
           limit: 4096,
           name: 'img/[name].[ext]?v=[hash:8]'
+        }
+      }, {
+        loader: 'png-loader',
+        options: {
+          key: 'xBdcCnv1FsvB8Js22TzLJMYKJlBp9kR1',
+          ext: ['png', 'jpeg', 'jpg'],
+          identifier: 'QCS_GROWTH'
         }
       }]
     }]
