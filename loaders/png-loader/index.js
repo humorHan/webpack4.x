@@ -7,6 +7,7 @@ const upload = require('./core/upload.js');
  * @return str 返回匹配到文件经过该loader处理后的内容
  */
 module.exports = async function(source) {
+  const done = this.async();
   // TODO 根据this.fs写loading？--对比匹配好的图片总量和【无需上传+上传成功】数对比
   let options = Object.assign({
     ext: ['png', 'jpeg', 'jpg'],
@@ -27,5 +28,5 @@ module.exports = async function(source) {
   // compress
   let buffer = await upload(options);
   console.timeEnd('upload')
-  return buffer;
+  return done(null, buffer);
 }
