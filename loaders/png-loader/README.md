@@ -46,4 +46,4 @@ type `Array`
 
 #### identifier
 type: `String`
-给压缩后图片添加标志位，用于减少不必要的压缩操作
+给压缩后图片添加标志位，用于减少不必要的压缩操作，注:由于png没有exif，所以目前只给jpg和jpeg添加标志位
