@@ -1,5 +1,5 @@
 {
-  "name": "tinypng",
+  "name": "tinypng-loader",
   "version": "0.0.1-alpha.1",
   "description": "tinyPng",
   "main": "index.js",
@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "loader-utils": "^1.2.3",
+    "ora": "^3.2.0",
     "piexifjs": "^1.0.4",
     "tinify": "^1.6.0-beta.2"
   }

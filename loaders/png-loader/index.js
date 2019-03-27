@@ -15,9 +15,16 @@ module.exports = async function(source) {
   if (!options.key || typeof options.key !== 'string') {
     throw new Error('tinyPNG key not available or empty');
   }
-  // TODO 校验tinyPng支持的格式
+  let reg = new RegExp(options.ext.join('|'));
+  if (!options.ext.every(item => {
+    return reg.test(item);
+  })) {
+    throw new Error('仅支持【jpg, jpeg, png】类型图片的压缩，请检查配置')
+  }
+
+  console.time('upload')
   // compress
   let buffer = await upload(options);
-  
+  console.timeEnd('upload')
   return buffer;
 }

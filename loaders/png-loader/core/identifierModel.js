@@ -5,7 +5,6 @@ module.exports = {
   hasIdentifier: (buffer, identifier) => {
     let binary = buffer.toString('binary');
     let exifObj = piexif.load(binary);
-    console.log(exifObj, identifier);
     return exifObj['0th'][piexif.ImageIFD.Make] === identifier;
   },
   insertIdentifier(buffer, identifier) {
