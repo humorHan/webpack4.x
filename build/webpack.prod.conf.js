@@ -22,12 +22,6 @@ module.exports = {
     // 可以根据环境区分引用的库文件是否是开发版本
     alias: {}
   },
-  resolveLoader: {
-    modules: [
-      path.resolve('loaders'),
-      'node_modules'
-    ]
-  },
   module: {
     rules: [{
       test: /\.scss$/,
@@ -56,7 +50,7 @@ module.exports = {
           name: 'img/[name].[ext]?v=[hash:8]'
         }
       }, {
-        loader: 'png-loader',
+        loader: '@humorhan/tinypng-loader',
         options: {
           key: 'xBdcCnv1FsvB8Js22TzLJMYKJlBp9kR1',
           ext: ['png', 'jpeg', 'jpg'],
