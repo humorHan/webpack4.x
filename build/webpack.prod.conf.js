@@ -54,7 +54,8 @@ module.exports = {
         options: {
           key: 'xBdcCnv1FsvB8Js22TzLJMYKJlBp9kR1',
           ext: ['png', 'jpeg', 'jpg'],
-          identifier: 'QCS_GROWTH'
+          proxy: '',
+          enable: true
         }
       }]
     }]
