@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@humorhan/tinypng-loader@0.0.2-alpha.2":
-  version "0.0.2-alpha.2"
-  resolved "https://registry.yarnpkg.com/@humorhan/tinypng-loader/-/tinypng-loader-0.0.2-alpha.2.tgz#fa5e5f4a9c2a88d64068a3b862496a7d7bb109ff"
-  integrity sha512-BKWvrFTnnMQSkV11EeZixl3dyDOL5poZwJdI+LvRe9DjnjDH5sgoi6oOT+l+Ph4spnuRUhAYgt5TqdOvzoCJ3g==
+"@humorhan/tinypng-loader@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@humorhan/tinypng-loader/-/tinypng-loader-0.0.3.tgz#bab4aff341c2440d871ec44423abaa471371759c"
+  integrity sha512-PQ/0duNoknt3dm3wCQNMROiXKHVEFgV8wv0zwmTy6a04cZCe/AIjchJ7x1fzkEvW09pOTV/21+qhCSQqldocAA==
   dependencies:
     loader-utils "^1.2.3"
     ora "^3.2.0"
