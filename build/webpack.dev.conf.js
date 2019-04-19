@@ -22,18 +22,19 @@ module.exports = {
     rules: [{
       test: /\.scss$/,
       use: [{
-        // loader: MiniCssExtractPlugin.loader,
-        loader: 'style-loader'
-      }, {
         loader: "css-loader",
         options: {
           sourceMap: true
         }
       }, {
-        loader: 'postcss-loader'
+        loader: 'postcss-loader',
+        options: {
+          sourceMap: true
+        }
       }, {
         loader: "sass-loader",
         options: {
+          sourceMap: true,
           includePaths: [utils.resolve('src/scss')]
         }
       }]
