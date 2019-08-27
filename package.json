@@ -42,6 +42,7 @@
     "@humorhan/tinypng-loader": "0.0.3",
     "babel-runtime": "^6.26.0",
     "file-loader": "^3.0.1",
-    "sass": "^1.7.3"
+    "sass": "^1.7.3",
+    "webpack-dashboard": "^3.0.7"
   }
 }

@@ -1,6 +1,9 @@
 const webpack = require('webpack');
 const utils = require('./lib/utils.js');
 const htmlPlugin = require('./lib/html-plugin.js');
+const Dashboard = require('webpack-dashboard');
+const DashboardPlugin = require('webpack-dashboard/plugin');
+const dashboard = new Dashboard();
 
 module.exports = {
   mode: 'development',
@@ -55,20 +58,23 @@ module.exports = {
   },
   plugins: [
     ...htmlPlugin('dev'),
+    new DashboardPlugin(dashboard.setData),
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
     /*proxy: { // proxy URLs to backend development server
      '/api': 'http://localhost:3000'
      },*/
+    historyApiFallback: true,
+    quiet: true,
     port: 9000,
     clientLogLevel: "none",
     contentBase: utils.resolve("dist"),
     compress: true,
-    //historyApiFallback: true, // true for index.html upon 404, object for multiple paths
+    historyApiFallback: true, // true for index.html upon 404, object for multiple paths
     hot: true,
-    https: false,
-    noInfo: true,
+    // https: false,
+    // noInfo: true, 配置这项则DashboardPlugin异常，猜测不兼容
     open: true,
     openPage: './dist/html/home.html',
     logLevel: 'error'
