@@ -2,6 +2,10 @@ const entries = require("./lib/entries");
 const utils = require('./lib/utils.js');
 
 module.exports = {
+  node: {
+    Buffer: false,
+    process: false
+  },
   entry: entries,
   output: {
     path: utils.resolve('dist'),

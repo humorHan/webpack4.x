@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 const utils = require('./lib/utils.js');
 const htmlPlugin = require('./lib/html-plugin.js');
-const Dashboard = require('webpack-dashboard');
-const DashboardPlugin = require('webpack-dashboard/plugin');
-const dashboard = new Dashboard();
+// const Dashboard = require('webpack-dashboard');
+// const DashboardPlugin = require('webpack-dashboard/plugin');
+// const dashboard = new Dashboard();
 
 module.exports = {
   mode: 'development',
@@ -58,7 +58,7 @@ module.exports = {
   },
   plugins: [
     ...htmlPlugin('dev'),
-    new DashboardPlugin(dashboard.setData),
+    // new DashboardPlugin(dashboard.setData),
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
